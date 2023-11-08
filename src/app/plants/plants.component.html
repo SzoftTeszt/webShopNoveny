@@ -1,0 +1,23 @@
+<!-- {{plants|json}} -->
+
+<div class="row g-3">
+    <div *ngFor="let noveny of plants" class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+        <div class="card h-100">
+            <img [src]="noveny.kepUrl" class="card-img-top" [alt]="noveny.megnevezes">
+            <div class="card-body">
+                <h5 class="card-title">{{noveny.megnevezes}}</h5>
+                <p class="card-text">
+                    {{noveny.leiras}}
+                </p>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">{{noveny.ar}} Ft</small>
+              <div class="input-group mb-3">
+                <input #db type="number" class="form-control" value="1" min="1" aria-describedby="button-addon2">
+                
+                <button (click)="kosarba(noveny.id,db.value)"  class="btn btn-outline-secondary" type="button" id="button-addon2">Megrendel</button>
+              </div>
+            </div>
+        </div>  
+    </div>
+</div>
