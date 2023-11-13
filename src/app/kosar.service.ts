@@ -30,4 +30,12 @@ export class KosarService {
     console.log(this.kosar)
   }
 
+
+  tetelTorlese(tetel:any){
+    this.kosar=this.kosar.filter(
+      (e:any)=> e.id!=tetel.id
+    )
+    this.frissul()
+  }
+
 }
