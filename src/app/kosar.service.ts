@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class KosarService {
   private kosar:any=[]
-  private kosarTartalom= new Subject()
+  private kosarTartalom= new BehaviorSubject(this.kosar)
   
   constructor() { }
 

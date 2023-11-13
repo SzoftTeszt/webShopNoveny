@@ -22,12 +22,23 @@
             </button>
         </div>
 
+        <div class="form-floating mb-3">
+            <input [(ngModel)]="nev" type="textl" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <label for="floatingInput">Név:</label>
+          </div>
+          <div class="form-floating">
+            <input [(ngModel)]="cim" type="text" class="form-control" id="floatingPassword" placeholder="Password">
+            <label for="floatingPassword">Cím</label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input [(ngModel)]="beleegyezes" class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+            <label class="form-check-label" for="flexSwitchCheckChecked">Mindenbe beleegyezek</label>
+          </div>
+
+        <h2 class="ms-3">Fizetendő: {{osszesen()}} Ft</h2>
         
-
-
-        <h5 class="ms-3">Fizetendő: {{osszesen()}} Ft</h5>
-
-        <button routerLink="/rendelesleadas" type="button" class="btn btn-success btn-sm">
+        <button (click)="megrendel()" [disabled]="!beleegyezes" routerLink="/rendelesleadas" type="button" class="btn btn-success btn-sm">
             Kosár véglegesítése
         </button>
     </ng-container>

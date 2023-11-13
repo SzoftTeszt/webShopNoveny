@@ -10,6 +10,8 @@ import { KosarService } from '../kosar.service';
 export class PlantsComponent {
 
     plants:any
+    showError=false
+    errorMessage=""
 
     oszlopok=[
       {key:"id", text:"#", type:"plain"},
@@ -21,9 +23,15 @@ export class PlantsComponent {
 
     constructor(private base:BaseService, private kosar:KosarService){
 
-       this.base.getPlants().subscribe(
-        (adatok)=>this.plants=adatok
-       )        
+      
+
+
+       this.base.getPlants().subscribe({
+
+        next:(adatok)=>{this.plants=adatok; this.showError=false },
+        error:(e)=>{this.showError=true; this.errorMessage=e.message}
+       
+       })        
     }
 
     kosarba(id:any, db:any){

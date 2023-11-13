@@ -9,13 +9,17 @@ import { PlantsComponent } from './plants/plants.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BasketComponent } from './basket/basket.component';
 import { BaskeComponent } from './baske/baske.component';
+import { HomeComponent } from './home/home.component';
+import { RendelesComponent } from './rendeles/rendeles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PlantsComponent,
     BasketComponent,
-    BaskeComponent
+    BaskeComponent,
+    HomeComponent,
+    RendelesComponent
   ],
   imports: [
     BrowserModule,
